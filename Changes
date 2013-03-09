@@ -1,5 +1,10 @@
 Revision history for Config::Multi
 
+
+0.12    2013-03-10T00:11:30+09:00
+        - avoided a worning of using uninitialized value.
+          thanks Siraiwa san for patch!
+
 0.11    2009-10-09T12:36:39+09:00
         - fixed 08-unicode-option-with-yaml-syck.t.
           is_supported_yaml_syck() returned false, if not supported YAML::Syck.

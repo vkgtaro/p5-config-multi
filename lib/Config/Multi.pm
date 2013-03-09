@@ -11,7 +11,7 @@ use File::Spec;
  
 use base qw/Class::Accessor/;
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 __PACKAGE__->mk_accessors(qw/app_name prefix dir files extension unicode/);
 
