@@ -70,10 +70,6 @@ sub load {
 sub _local_files {
     my $self        = shift;
     my $env_app_key = 'CONFIG_MULTI_' . uc( $self->{app_name} );
-    my $env_prefix_key
-        = 'CONFIG_MULTI_'
-        . uc( $self->{prefix} ) . '_'
-        . uc( $self->{app_name} );
     my @files     = ();
     my $app_local = $ENV{$env_app_key}
         || File::Spec->catfile( $self->dir,
@@ -81,6 +77,10 @@ sub _local_files {
     push @files, $app_local if -e $app_local;
 
     if ( $self->{prefix} ) {
+        my $env_prefix_key
+            = 'CONFIG_MULTI_'
+            . uc( $self->{prefix} ) . '_'
+            . uc( $self->{app_name} );
         my $prefix_local = $ENV{$env_prefix_key} || File::Spec->catfile(
             $self->dir,
             $self->{prefix} . '_'
